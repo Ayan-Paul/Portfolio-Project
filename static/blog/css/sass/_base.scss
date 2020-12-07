@@ -1,0 +1,170 @@
+@import "utilities";
+@import "variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'lato',sans-serif;
+    color:$color-black-dark-1;
+    position: relative;
+    min-height: 100vh;
+    
+}
+
+body::after {
+    content: '';
+    margin-top: 5rem;
+    display: block;
+    height: 50px; /* Set same as footer's height */
+  }
+
+////////// NAVBAR ///////////
+
+.nav-bgcolor {
+    background-color: $color-secondary;
+    box-shadow: $box-shadow;
+    transition: all .2s;
+
+    a {
+        color: $color-black-dark-1;
+
+        &:hover {
+            color: $color-black;
+            @media (max-width: 62em) {
+                transform: scaleY(1.2) scaleX(1.005);
+            }
+            @media (min-width: 62em) {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.navbar-brand-text {
+    padding-left: .5rem;
+}
+
+////////// CARD ///////////
+
+.custom-container {
+    padding-top: 6rem;
+}
+
+.custom-card {
+    background-color: $color-primary;
+    width: 70%;
+    margin: 2rem auto 2rem;
+    border-radius: 7px;
+    padding: 2rem;
+
+    &__heading {
+        color: $color-black-dark-3;
+        font-style: italic;
+    }
+
+    a:link,
+    a:visited {
+        text-decoration: none;
+        color: $color-black-dark-3;
+    }
+
+    a:hover,
+    a:active {
+        color: $color-black-dark-1;
+    }
+
+}
+
+////////// BACKGROUND ///////////
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: .35;
+    overflow: hidden; 
+    position: fixed;
+    
+    &__content {
+        height: 100vh;
+        width: 100vw;
+        background-attachment: fixed;
+        -o-object-fit: cover;
+        object-fit: cover; }
+}
+
+////////// BUTTON ///////////
+
+.btn-detail {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: right;
+
+    @media (max-width: 36em) {
+        justify-content: center;
+    }
+
+    &__text {
+        background-color: $color-primary;
+        padding: .5rem 2rem;
+        border-radius: 7px;
+        font-weight: bolder;
+        border: 0;
+        margin-right: 5rem;
+        right: 6rem;
+
+        @media (max-width: 36em) {
+            margin: 0;
+        }
+
+        a:link,
+        a:visited {
+            text-decoration: none;
+            color: $color-black-dark-3;
+        }
+
+        a:hover,
+        a:active {
+        color: $color-black-dark-1;
+        }
+    }
+}
+
+////////// FOOTER ///////////
+
+.footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: $color-gray-dark;
+    color: $color-secondary;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    p {
+        margin: 0;
+    }
+}
+
+
+////////// SELECTION ///////////
+
+::selection {
+    background-color: $color-secondary;
+    color: $color-black;
+}
+
